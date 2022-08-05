@@ -16,10 +16,25 @@ body {
 
 .sky img {
     height: 200px;
+
 }
 
 .sun img {
     height: 150px;
+}
+
+.super img {
+    height: 100px;
+    display: none;
+    z-index: 3;
+}
+
+.super {
+    height: 100px;
+    position: absolute;
+    left: 50px;
+    top: 400px;
+    animation: super 10s infinite;
 }
 
 .sky {
@@ -37,6 +52,17 @@ body {
     max-height: 150px;
 }
 
+@keyframes super {
+    50% {
+        transform: translateX(1000px) translateY(-400px);
+    }
+
+    100% {
+        transform: translateY(200px) translateX(1100px);
+    }
+}
+
+
 @keyframes sky {
     100% {
         transform: translateX(-1000px);
@@ -47,7 +73,28 @@ body {
     50% {
         transform: translateX(800px) translateY(-400px);
     }
+
     100% {
         transform: translateX(1300px) translateY(40px);
     }
+}
+
+.bg:hover .super>img {
+    display: block;
+}
+
+.pool img {
+    height: 100px;
+    display: none;
+}
+
+.bg:hover .pool>img {
+    display: block;
+}
+
+.pool {
+    position: relative;
+    bottom: -600px;
+    right: 160px;
+    z-index: 0;
 }
